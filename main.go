@@ -49,7 +49,7 @@ func getDownload() {
 		if i == 6 {
 			time.Sleep(time.Second * 3) // Simulate a slow download.
 		}
-		getFile(fakeInstallList[i])
+		go getFile(fakeInstallList[i])
 		p.UpdateTitle("下载成功 " + fakeInstallList[i])         // Update the title of the progressbar.
 		pterm.Success.Println("下载成功 " + fakeInstallList[i]) // If a progressbar is running, each print will be printed above the progressbar.
 		p.Increment()                                       // Increment the progressbar by one. Use Add(x int) to increment by a custom amount.
